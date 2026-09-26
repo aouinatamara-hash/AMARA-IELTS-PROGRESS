@@ -14,59 +14,24 @@
     .nav-btn.active { background-color: #1e293b; border-left: 4px solid #3b82f6; color: #60a5fa; }
   </style>
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col md:flex-row font-sans antialiased selection:bg-blue-600 selection:text-white">
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col md:flex-row font-sans antialiased">
 
   <!-- SIDEBAR NAVIGATION -->
   <aside class="w-full md:w-64 bg-slate-900 border-b md:border-b-0 md:border-r border-slate-800 flex-shrink-0">
     <div class="p-4 border-b border-slate-800 flex items-center justify-between">
       <div>
         <h1 class="font-bold text-lg text-blue-400 tracking-wide uppercase"><i class="fa-solid fa-graduation-cap mr-2"></i>IELTS ACADEMY</h1>
-        <p class="text-xs text-slate-400">Personal Student Platform</p>
+        <p class="text-xs text-slate-400">Personal Learning Academy</p>
       </div>
       <span class="bg-blue-900/60 text-blue-300 text-xs px-2 py-1 rounded border border-blue-700 font-semibold">Band 6.0+</span>
     </div>
 
-    <!-- Quick Profile Summary -->
-    <div class="p-4 bg-slate-900/50 border-b border-slate-800/80">
+    <!-- Student Profile Badge -->
+    <div class="p-4 bg-slate-900/50 border-b border-slate-800">
       <div class="text-xs text-slate-400">Student: <span class="text-slate-200 font-medium">Amara Aouinat</span></div>
       <div class="text-xs text-slate-400 mt-1">Exam Date: <span class="text-amber-400 font-medium">Dec 1, 2026</span></div>
-      <div class="text-xs text-slate-400 mt-1">Current Cycle: <span class="text-emerald-400 font-medium">Day 3 (Pending Tasks)</span></div>
+      <div class="text-xs text-slate-400 mt-1">Current Cycle: <span class="text-emerald-400 font-medium">Day 3 (In Progress)</span></div>
     </div>
 
     <nav class="p-2 space-y-1 text-sm overflow-y-auto max-h-[calc(100vh-160px)]" id="main-nav">
-      <button onclick="switchTab('dashboard')" class="nav-btn w-full text-left px-إليك الكود الكامل لملف الماكرو (`Macro / VBA`). يمكنك نسخه بالكامل ولصقه مباشرة في محرر VBA داخل إكسل:
-
-```vba
-Sub CopyDataToMaster()
-    Dim wsSource As Worksheet
-    Dim wsMaster As Worksheet
-    Dim lastRowSource As Long
-    Dim lastRowMaster As Long
-    
-    ' إيقاف تحديث الشاشة لسرعة التنفيذ
-    Application.ScreenUpdating = False
-    
-    ' تعيين شيت المصدر (قم بتغيير Sheet1 باسم الشيت الخاص بك)
-    Set wsSource = ThisWorkbook.Sheets("Sheet1")
-    
-    ' تعيين الشيت الرئيسي للتجميع (قم بتغيير MasterSheet باسم الشيت النهائي)
-    Set wsMaster = ThisWorkbook.Sheets("MasterSheet")
-    
-    ' معرفة آخر صف يحتوي على بيانات في شيت المصدر (العمود A)
-    lastRowSource = wsSource.Cells(wsSource.Rows.Count, "A").End(xlUp).Row
-    
-    ' معرفة آخر صف فارغ في الشيت الرئيسي (العمود A)
-    lastRowMaster = wsMaster.Cells(wsMaster.Rows.Count, "A").End(xlUp).Row + 1
-    
-    ' التحقق من وجود بيانات للنسخ
-    If lastRowSource >= 2 Then
-        ' نسخ البيانات من الصف 2 حتى آخر صف إلى الشيت الرئيسي
-        wsSource.Range("A2:Z" & lastRowSource).Copy Destination:=wsMaster.Range("A" & lastRowMaster)
-        MsgBox "تم نسخ البيانات بنجاح!", vbInformation, "نجاح"
-    Else
-        MsgBox "لا توجد بيانات جديدة للنسخ.", vbExclamation, "تنبيه"
-    End If
-    
-    ' إعادة تفعيل تحديث الشاشة
-    Application.ScreenUpdating = True
-End Sub
+      <button onclick="switchTab('dashboard')" class="nav-btn active w-full text-leftبعد نور! كيف أقدر أساعدك اليوم؟
