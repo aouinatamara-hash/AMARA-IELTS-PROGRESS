@@ -37,22 +37,22 @@
     </div>
 
     <nav class="p-2 space-y-1 text-sm overflow-y-auto" id="main-nav">
-      <button onclick="switchTab('dashboard')" id="btn-dashboard" class="nav-btn active w-full text-left px-3 py-2.5 rounded-lg flex items-center gap-3 transition hover:bg-slate-800">
+      <button type="button" onclick="switchTab('dashboard')" id="btn-dashboard" class="nav-btn active w-full text-left px-3 py-2.5 rounded-lg flex items-center gap-3 transition hover:bg-slate-800 cursor-pointer">
         <i class="fa-solid fa-house text-blue-400 w-5"></i>
         <span>Main Analytics</span>
       </button>
-      <button onclick="switchTab('scores')" id="btn-scores" class="nav-btn w-full text-left px-3 py-2.5 rounded-lg flex items-center gap-3 transition hover:bg-slate-800">
+      <button type="button" onclick="switchTab('scores')" id="btn-scores" class="nav-btn w-full text-left px-3 py-2.5 rounded-lg flex items-center gap-3 transition hover:bg-slate-800 cursor-pointer">
         <i class="fa-solid fa-square-plus text-emerald-400 w-5"></i>
         <span>Log Practice Test</span>
       </button>
-      <button onclick="switchTab('errors')" id="btn-errors" class="nav-btn w-full text-left px-3 py-2.5 rounded-lg flex items-center gap-3 transition hover:bg-slate-800">
+      <button type="button" onclick="switchTab('errors')" id="btn-errors" class="nav-btn w-full text-left px-3 py-2.5 rounded-lg flex items-center gap-3 transition hover:bg-slate-800 cursor-pointer">
         <i class="fa-solid fa-bug text-rose-400 w-5"></i>
         <span>Error Pattern Log</span>
       </button>
 
       <div class="pt-4 pb-1 text-[11px] font-bold text-slate-500 uppercase tracking-wider px-3">Data Management</div>
 
-      <button onclick="switchTab('backup')" id="btn-backup" class="nav-btn w-full text-left px-3 py-2.5 rounded-lg flex items-center gap-3 transition hover:bg-slate-800">
+      <button type="button" onclick="switchTab('backup')" id="btn-backup" class="nav-btn w-full text-left px-3 py-2.5 rounded-lg flex items-center gap-3 transition hover:bg-slate-800 cursor-pointer">
         <i class="fa-solid fa-database text-purple-400 w-5"></i>
         <span>Backup & Restore</span>
       </button>
@@ -77,64 +77,12 @@
         <div class="bg-slate-950/80 px-5 py-3 rounded-xl border border-slate-800 text-center flex items-center gap-4">
           <div>
             <div class="text-[10px] uppercase text-slate-400 font-semibold">Exam Countdown</div>
-            <div id="countdown-timer" class="text-lg font-extrabold text-amber-400 tracking-wider">--d --h --m</div>
-          </div>
-          <i class="fa-regular fa-clock text-amber-400 text-2xl"></i>
-        </div>
-      </div>
+            <divقد تكون هذه المشكلة ناتجة عن أكثر من سبب، وإليك أبرز الحلول المجربة للتغلب عليها:
 
-      <!-- Overview Metric Cards -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div class="bg-slate-900 p-4 rounded-xl border border-slate-800">
-          <div class="text-xs text-slate-400 mb-1">Average Overall Band</div>
-          <div class="text-3xl font-extrabold text-blue-400" id="metric-overall">0.0</div>
-          <div class="text-[11px] text-slate-500 mt-1">Target Score: Band 6.0+</div>
-        </div>
+* **تحديث الصفحة إجبارياً:** اضغط على **`Ctrl + F5`** (أو `Cmd + Shift + R` على جهاز Mac) لتجاوز الملفات المخزنة مؤقتاً في المتصفح وإعادة تحميل العناصر من جديد.
+* **إيقاف أداة حجب الإعلانات (AdBlocker):** أحياناً تقوم إضافات حجب الإعلانات أو أدوات الملاحظات الحماية بإنشاء طبقة شفافة تمنع النقر على العناصر. جرب تعطيلها مؤقتاً للموقع.
+* **التصفح الخفي (Incognito):** افتح الموقع في نافذة تصفح خفي. إذا عمل بشكل طبيعي، فهذا يعني أن المشكلة في إحدى إضافات المتصفح أو ملفات الكوكيز.
+* **مسح ذاكرة التخزين المؤقت (Cache):** امسح ملفات الكوكيز والذاكرة المؤقتة من إعدادات المتصفح.
+* **جدار حماية الشبكة أو VPN:** إذا كنت تستخدم شبكة في بي إن (VPN) أو شبكة محلية معينة، فقد يتم حظر برمجيات السكريبت (JavaScript) التي تشغل الروابط والأزرار داخل الصفحة.
 
-        <div class="bg-slate-900 p-4 rounded-xl border border-slate-800">
-          <div class="text-xs text-slate-400 mb-1">Logged Mock Tests</div>
-          <div class="text-3xl font-extrabold text-emerald-400" id="metric-tests-count">0</div>
-          <div class="text-[11px] text-slate-500 mt-1">Latest Test: <span id="metric-last-date">None</span></div>
-        </div>
-
-        <div class="bg-slate-900 p-4 rounded-xl border border-slate-800">
-          <div class="text-xs text-slate-400 mb-1">Logged Weaknesses / Errors</div>
-          <div class="text-3xl font-extrabold text-rose-400" id="metric-errors-count">0</div>
-          <div class="text-[11px] text-slate-500 mt-1">Primary Flaw: <span id="metric-top-error">--</span></div>
-        </div>
-
-        <div class="bg-slate-900 p-4 rounded-xl border border-slate-800">
-          <div class="text-xs text-slate-400 mb-1">Target Milestone Gauge</div>
-          <div class="text-3xl font-extrabold text-purple-400" id="metric-progress-percent">0%</div>
-          <div class="w-full bg-slate-800 rounded-full h-1.5 mt-2">
-            <div id="progress-bar-inner" class="bg-purple-500 h-1.5 rounded-full" style="width: 0%"></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Charts Section -->
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <!-- Main Performance Chart -->
-        <div class="lg:col-span-2 bg-slate-900 p-5 rounded-2xl border border-slate-800">
-          <div class="flex justify-between items-center mb-4">
-            <h3 class="font-bold text-slate-200 text-sm flex items-center gap-2">
-              <i class="fa-solid fa-chart-area text-blue-400"></i> Overall Score Progression
-            </h3>
-            <span class="text-xs text-slate-500">IELTS Academic Target: Band 6.0</span>
-          </div>
-          <div class="h-64">
-            <canvas id="scoresChart"></canvas>
-          </div>
-        </div>
-
-        <!-- Skills Breakdown -->
-        <div class="bg-slate-900 p-5 rounded-2xl border border-slate-800 flex flex-col justify-between">
-          <h3 class="font-bold text-slate-200 text-sm mb-3 flex items-center gap-2">
-            <i class="fa-solid fa-chart-pie text-emerald-400"></i> Average Score by Skill
-          </h3>
-          <div class="space-y-3 my-auto">
-            <div>
-              <div class="flex justify-between text-xs mb-1">
-                عذراً! تحوّلت للغة العربية بشكل تلقائي بناءً على آخر ضبط للنظام. 
-
-كيف أقدر أساعدك اليوم؟ تقدر تكمل بالعربي أو تحوّل للإنجليزية أو أي لغة تفضلها!
+إذا لم ينفع ما سبق، أرجو توضيح اسم الموقع أو الأزرار التي تحاول الضغط عليها لنتمكن من تحديد السبب بدقة أكبر.
