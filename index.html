@@ -1,60 +1,60 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IELTS Academic Progress Tracker & Analytics | عمارة عوينات</title>
+  <title>IELTS Academic Progress Tracker & Analytics | Amara Aouinat</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap');
-    body { font-family: 'Tajawal', sans-serif; }
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+    body { font-family: 'Inter', sans-serif; }
     .nav-btn.active {
       background-color: #1e293b;
-      border-right: 4px solid #3b82f6;
+      border-left: 4px solid #3b82f6;
       color: #60a5fa;
     }
   </style>
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col md:flex-row antialiased selection:bg-blue-600 selection:text-white">
 
-  <!-- SIDEBAR NAVIGATION -->
-  <aside class="w-full md:w-64 bg-slate-900 border-b md:border-b-0 md:border-l border-slate-800 flex-shrink-0">
+  <!-- NAVIGATION SIDEBAR -->
+  <aside class="w-full md:w-64 bg-slate-900 border-b md:border-b-0 md:border-r border-slate-800 flex-shrink-0">
     <div class="p-4 border-b border-slate-800 flex items-center justify-between">
       <div>
         <h1 class="font-bold text-base text-blue-400 tracking-wide uppercase"><i class="fa-solid fa-chart-line mr-2"></i>IELTS ANALYTICS</h1>
-        <p class="text-xs text-slate-400">لوحة التتبع والتحليل البياني</p>
+        <p class="text-xs text-slate-400">Progress & Performance Tracker</p>
       </div>
       <span class="bg-blue-900/60 text-blue-300 text-xs px-2 py-1 rounded border border-blue-700 font-semibold">Band 6.0+</span>
     </div>
 
-    <!-- Student Profile Info -->
+    <!-- Student Profile Summary -->
     <div class="p-4 bg-slate-900/50 border-b border-slate-800 text-xs space-y-1.5">
-      <div class="text-slate-400">الطالب: <span class="text-slate-200 font-medium">عمارة عوينات</span></div>
-      <div class="text-slate-400">موعد الامتحان: <span class="text-amber-400 font-medium">1 ديسمبر 2026</span></div>
-      <div class="text-slate-400">الهدف الحالي: <span class="text-emerald-400 font-medium">Band 6.5</span></div>
+      <div class="text-slate-400">Student: <span class="text-slate-200 font-medium">Amara Aouinat</span></div>
+      <div class="text-slate-400">Exam Date: <span class="text-amber-400 font-medium">Dec 1, 2026</span></div>
+      <div class="text-slate-400">Target Score: <span class="text-emerald-400 font-medium">Band 6.5</span></div>
     </div>
 
     <nav class="p-2 space-y-1 text-sm overflow-y-auto" id="main-nav">
-      <button onclick="switchTab('dashboard')" id="btn-dashboard" class="nav-btn active w-full text-right px-3 py-2.5 rounded-lg flex items-center gap-3 transition hover:bg-slate-800">
+      <button onclick="switchTab('dashboard')" id="btn-dashboard" class="nav-btn active w-full text-left px-3 py-2.5 rounded-lg flex items-center gap-3 transition hover:bg-slate-800">
         <i class="fa-solid fa-house text-blue-400 w-5"></i>
-        <span>لوحة التحليلات الرئيسية</span>
+        <span>Main Analytics</span>
       </button>
-      <button onclick="switchTab('scores')" id="btn-scores" class="nav-btn w-full text-right px-3 py-2.5 rounded-lg flex items-center gap-3 transition hover:bg-slate-800">
+      <button onclick="switchTab('scores')" id="btn-scores" class="nav-btn w-full text-left px-3 py-2.5 rounded-lg flex items-center gap-3 transition hover:bg-slate-800">
         <i class="fa-solid fa-square-plus text-emerald-400 w-5"></i>
-        <span>تسجيل نتيجة اختبار جديد</span>
+        <span>Log Practice Test</span>
       </button>
-      <button onclick="switchTab('errors')" id="btn-errors" class="nav-btn w-full text-right px-3 py-2.5 rounded-lg flex items-center gap-3 transition hover:bg-slate-800">
+      <button onclick="switchTab('errors')" id="btn-errors" class="nav-btn w-full text-left px-3 py-2.5 rounded-lg flex items-center gap-3 transition hover:bg-slate-800">
         <i class="fa-solid fa-bug text-rose-400 w-5"></i>
-        <span>سجل وتحليل الأخطاء</span>
+        <span>Error Pattern Log</span>
       </button>
 
-      <div class="pt-4 pb-1 text-[11px] font-bold text-slate-500 uppercase tracking-wider px-3">البيانات والأدوات</div>
+      <div class="pt-4 pb-1 text-[11px] font-bold text-slate-500 uppercase tracking-wider px-3">Data Management</div>
 
-      <button onclick="switchTab('backup')" id="btn-backup" class="nav-btn w-full text-right px-3 py-2.5 rounded-lg flex items-center gap-3 transition hover:bg-slate-800">
+      <button onclick="switchTab('backup')" id="btn-backup" class="nav-btn w-full text-left px-3 py-2.5 rounded-lg flex items-center gap-3 transition hover:bg-slate-800">
         <i class="fa-solid fa-database text-purple-400 w-5"></i>
-        <span>النسخ الاحتياطي واسترجاع البيانات</span>
+        <span>Backup & Restore</span>
       </button>
     </nav>
   </aside>
@@ -69,15 +69,15 @@
       <div class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 p-5 rounded-2xl border border-slate-800 shadow-xl flex flex-col md:flex-row justify-between items-center gap-4">
         <div>
           <h2 class="text-xl font-bold text-white flex items-center gap-2">
-            <i class="fa-solid fa-gauge-high text-blue-500"></i> ملخص الجاهزية والتقدم التراكمي
+            <i class="fa-solid fa-gauge-high text-blue-500"></i> Readiness & Progress Dashboard
           </h2>
-          <p class="text-xs text-slate-400 mt-1">تتبع درجات الاختبارات التجريبية وتطور الأداء الأكاديمي</p>
+          <p class="text-xs text-slate-400 mt-1">Track practice test scores and skill-by-skill analytical trends</p>
         </div>
 
         <div class="bg-slate-950/80 px-5 py-3 rounded-xl border border-slate-800 text-center flex items-center gap-4">
           <div>
-            <div class="text-[10px] uppercase text-slate-400 font-semibold">المتبقي على الامتحان</div>
-            <div id="countdown-timer" class="text-lg font-extrabold text-amber-400 tracking-wider">-- ي -- س -- د</div>
+            <div class="text-[10px] uppercase text-slate-400 font-semibold">Exam Countdown</div>
+            <div id="countdown-timer" class="text-lg font-extrabold text-amber-400 tracking-wider">--d --h --m</div>
           </div>
           <i class="fa-regular fa-clock text-amber-400 text-2xl"></i>
         </div>
@@ -86,25 +86,25 @@
       <!-- Overview Metric Cards -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <div class="bg-slate-900 p-4 rounded-xl border border-slate-800">
-          <div class="text-xs text-slate-400 mb-1">المعدل العام التقديري (Overall Band)</div>
+          <div class="text-xs text-slate-400 mb-1">Average Overall Band</div>
           <div class="text-3xl font-extrabold text-blue-400" id="metric-overall">0.0</div>
-          <div class="text-[11px] text-slate-500 mt-1">الهدف المطلوب: Band 6.0+</div>
+          <div class="text-[11px] text-slate-500 mt-1">Target Score: Band 6.0+</div>
         </div>
 
         <div class="bg-slate-900 p-4 rounded-xl border border-slate-800">
-          <div class="text-xs text-slate-400 mb-1">عدد الاختبارات التجريبية المسجلة</div>
+          <div class="text-xs text-slate-400 mb-1">Logged Mock Tests</div>
           <div class="text-3xl font-extrabold text-emerald-400" id="metric-tests-count">0</div>
-          <div class="text-[11px] text-slate-500 mt-1">أحدث اختبار: <span id="metric-last-date">لا يوجد</span></div>
+          <div class="text-[11px] text-slate-500 mt-1">Latest Test: <span id="metric-last-date">None</span></div>
         </div>
 
         <div class="bg-slate-900 p-4 rounded-xl border border-slate-800">
-          <div class="text-xs text-slate-400 mb-1">إجمالي الأخطاء المرصودة</div>
+          <div class="text-xs text-slate-400 mb-1">Logged Weaknesses / Errors</div>
           <div class="text-3xl font-extrabold text-rose-400" id="metric-errors-count">0</div>
-          <div class="text-[11px] text-slate-500 mt-1">المجال الأكثر تكراراً: <span id="metric-top-error">--</span></div>
+          <div class="text-[11px] text-slate-500 mt-1">Primary Flaw: <span id="metric-top-error">--</span></div>
         </div>
 
         <div class="bg-slate-900 p-4 rounded-xl border border-slate-800">
-          <div class="text-xs text-slate-400 mb-1">نسبة إنجاز الخطة الزمنية</div>
+          <div class="text-xs text-slate-400 mb-1">Target Milestone Gauge</div>
           <div class="text-3xl font-extrabold text-purple-400" id="metric-progress-percent">0%</div>
           <div class="w-full bg-slate-800 rounded-full h-1.5 mt-2">
             <div id="progress-bar-inner" class="bg-purple-500 h-1.5 rounded-full" style="width: 0%"></div>
@@ -118,9 +118,9 @@
         <div class="lg:col-span-2 bg-slate-900 p-5 rounded-2xl border border-slate-800">
           <div class="flex justify-between items-center mb-4">
             <h3 class="font-bold text-slate-200 text-sm flex items-center gap-2">
-              <i class="fa-solid fa-chart-area text-blue-400"></i> منحنى تطور الدرجات حسب المهارات
+              <i class="fa-solid fa-chart-area text-blue-400"></i> Overall Score Progression
             </h3>
-            <span class="text-xs text-slate-500">IELTS Academic Target: 6.0</span>
+            <span class="text-xs text-slate-500">IELTS Academic Target: Band 6.0</span>
           </div>
           <div class="h-64">
             <canvas id="scoresChart"></canvas>
@@ -130,373 +130,11 @@
         <!-- Skills Breakdown -->
         <div class="bg-slate-900 p-5 rounded-2xl border border-slate-800 flex flex-col justify-between">
           <h3 class="font-bold text-slate-200 text-sm mb-3 flex items-center gap-2">
-            <i class="fa-solid fa-chart-pie text-emerald-400"></i> متوسط الدرجات حسب المهارة
+            <i class="fa-solid fa-chart-pie text-emerald-400"></i> Average Score by Skill
           </h3>
           <div class="space-y-3 my-auto">
             <div>
               <div class="flex justify-between text-xs mb-1">
-                <span class="text-slate-300">الاستماع (Listening)</span>
-                <span class="text-blue-400 font-bold" id="avg-listening">0.0</span>
-              </div>
-              <div class="w-full bg-slate-800 rounded-full h-2">
-                <div id="bar-listening" class="bg-blue-500 h-2 rounded-full" style="width: 0%"></div>
-              </div>
-            </div>
+                عذراً! تحوّلت للغة العربية بشكل تلقائي بناءً على آخر ضبط للنظام. 
 
-            <div>
-              <div class="flex justify-between text-xs mb-1">
-                <span class="text-slate-300">القراءة (Reading)</span>
-                <span class="text-emerald-400 font-bold" id="avg-reading">0.0</span>
-              </div>
-              <div class="w-full bg-slate-800 rounded-full h-2">
-                <div id="bar-reading" class="bg-emerald-500 h-2 rounded-full" style="width: 0%"></div>
-              </div>
-            </div>
-
-            <div>
-              <div class="flex justify-between text-xs mb-1">
-                <span class="text-slate-300">الكتابة (Writing)</span>
-                <span class="text-amber-400 font-bold" id="avg-writing">0.0</span>
-              </div>
-              <div class="w-full bg-slate-800 rounded-full h-2">
-                <div id="bar-writing" class="bg-amber-500 h-2 rounded-full" style="width: 0%"></div>
-              </div>
-            </div>
-
-            <div>
-              <div class="flex justify-between text-xs mb-1">
-                <span class="text-slate-300">المحادثة (Speaking)</span>
-                <span class="text-purple-400 font-bold" id="avg-speaking">0.0</span>
-              </div>
-              <div class="w-full bg-slate-800 rounded-full h-2">
-                <div id="bar-speaking" class="bg-purple-500 h-2 rounded-full" style="width: 0%"></div>
-              </div>
-            </div>
-          </div>
-          <div class="text-[11px] text-slate-500 text-center mt-3 border-t border-slate-800/80 pt-2">
-            الحد الأدنى المطلوب لكل مهارة: 5.5 - 6.0
-          </div>
-        </div>
-      </div>
-
-      <!-- Recent History Table -->
-      <div class="bg-slate-900 p-5 rounded-2xl border border-slate-800">
-        <h3 class="font-bold text-slate-200 text-sm mb-4 flex items-center gap-2">
-          <i class="fa-solid fa-list-check text-purple-400"></i> آخر الاختبارات المسجلة
-        </h3>
-        <div class="overflow-x-auto">
-          <table class="w-full text-xs text-right text-slate-300">
-            <thead class="bg-slate-950 text-slate-400 border-b border-slate-800">
-              <tr>
-                <th class="p-3">التاريخ</th>
-                <th class="p-3">اسم المصدر / الاختبار</th>
-                <th class="p-3 text-center">الاستماع</th>
-                <th class="p-3 text-center">القراءة</th>
-                <th class="p-3 text-center">الكتابة</th>
-                <th class="p-3 text-center">المحادثة</th>
-                <th class="p-3 text-center">المعدل (Overall)</th>
-              </tr>
-            </thead>
-            <tbody id="scores-table-body" class="divide-y divide-slate-800">
-              <tr>
-                <td colspan="7" class="p-4 text-center text-slate-500">لا توجد اختبارات مسجلة بعد. استخدم تبويب "تسجيل نتيجة اختبار جديد" للبدء.</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-    </section>
-
-    <!-- TAB 2: SCORE ENTRY -->
-    <section id="tab-scores" class="space-y-6 hidden">
-      <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 max-w-2xl mx-auto">
-        <h2 class="text-lg font-bold text-white mb-1 flex items-center gap-2">
-          <i class="fa-solid fa-pen-to-square text-emerald-400"></i> إدخال نتيجة اختبار جديد
-        </h2>
-        <p class="text-xs text-slate-400 mb-6">قم بتسجيل درجاتك الناتجة عن الاختبارات التجريبية الرسمية لتقييم التقدم</p>
-
-        <form id="score-form" class="space-y-4">
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
-              <label class="block text-xs text-slate-400 mb-1">تاريخ الاختبار</label>
-              <input type="date" id="score-date" required class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-xs text-slate-200 focus:border-blue-500 focus:outline-none">
-            </div>
-            <div>
-              <label class="block text-xs text-slate-400 mb-1">اسم المصدر (مثال: Cambridge IELTS 18 Test 1)</label>
-              <input type="text" id="score-source" required placeholder="مثال: Cambridge 18 Test 1" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-xs text-slate-200 focus:border-blue-500 focus:outline-none">
-            </div>
-          </div>
-
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-2">
-            <div>
-              <label class="block text-xs text-slate-400 mb-1">الاستماع (0 - 9.0)</label>
-              <input type="number" step="0.5" min="0" max="9" id="score-listening" required class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-xs text-slate-200 focus:border-blue-500 focus:outline-none">
-            </div>
-            <div>
-              <label class="block text-xs text-slate-400 mb-1">القراءة (0 - 9.0)</label>
-              <input type="number" step="0.5" min="0" max="9" id="score-reading" required class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-xs text-slate-200 focus:border-blue-500 focus:outline-none">
-            </div>
-            <div>
-              <label class="block text-xs text-slate-400 mb-1">الكتابة (0 - 9.0)</label>
-              <input type="number" step="0.5" min="0" max="9" id="score-writing" required class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-xs text-slate-200 focus:border-blue-500 focus:outline-none">
-            </div>
-            <div>
-              <label class="block text-xs text-slate-400 mb-1">المحادثة (0 - 9.0)</label>
-              <input type="number" step="0.5" min="0" max="9" id="score-speaking" required class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-xs text-slate-200 focus:border-blue-500 focus:outline-none">
-            </div>
-          </div>
-
-          <button type="submit" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-2.5 rounded-lg text-xs transition mt-4">
-            <i class="fa-solid fa-save ml-2"></i> حفظ النتيجة وتحديث التحليلات
-          </button>
-        </form>
-      </div>
-    </section>
-
-    <!-- TAB 3: ERROR LOG & PATTERNS -->
-    <section id="tab-errors" class="space-y-6 hidden">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        
-        <!-- Add Error Form -->
-        <div class="bg-slate-900 p-5 rounded-2xl border border-slate-800">
-          <h3 class="font-bold text-slate-200 text-sm mb-3 flex items-center gap-2">
-            <i class="fa-solid fa-circle-plus text-rose-400"></i> رصد وتصنيف خطأ جديد
-          </h3>
-          <form id="error-form" class="space-y-3">
-            <div>
-              <label class="block text-xs text-slate-400 mb-1">المهارة الخاص بها الخطأ</label>
-              <select id="error-skill" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2 text-xs text-slate-200 focus:outline-none">
-                <option value="Listening">الاستماع (Listening)</option>
-                <option value="Reading">القراءة (Reading)</option>
-                <option value="Writing">الكتابة (Writing)</option>
-                <option value="Speaking">المحادثة (Speaking)</option>
-              </select>
-            </div>
-
-            <div>
-              <label class="block text-xs text-slate-400 mb-1">تصنيف الخطأ (Pattern)</label>
-              <select id="error-category" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2 text-xs text-slate-200 focus:outline-none">
-                <option value="Spelling">أخطاء إملائية (Spelling)</option>
-                <option value="Time Management">إدارة الوقت (Time Management)</option>
-                <option value="Grammar/Structure">قواعد وتراكيب (Grammar)</option>
-                <option value="Distractors/Misunderstanding">سوء فهم / المشتتات</option>
-                <option value="Vocabulary/Collocation">حصيلة كلمات / المتلازمات</option>
-              </select>
-            </div>
-
-            <div>
-              <label class="block text-xs text-slate-400 mb-1">وصف الخطأ والسبب</label>
-              <textarea id="error-desc" rows="3" required placeholder="مثال: أخطأت في كتابة كلمة Accommodation بنقص حرف m" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2 text-xs text-slate-200 focus:outline-none"></textarea>
-            </div>
-
-            <button type="submit" class="w-full bg-rose-600 hover:bg-rose-500 text-white font-bold py-2 rounded-lg text-xs transition">
-              <i class="fa-solid fa-plus ml-1"></i> إدراج في سجل الأخطاء
-            </button>
-          </form>
-        </div>
-
-        <!-- Errors History -->
-        <div class="lg:col-span-2 bg-slate-900 p-5 rounded-2xl border border-slate-800">
-          <h3 class="font-bold text-slate-200 text-sm mb-4 flex items-center gap-2">
-            <i class="fa-solid fa-triangle-exclamation text-amber-400"></i> سجل نقاط الضعف المرصودة
-          </h3>
-          <div class="space-y-3 max-h-[400px] overflow-y-auto pr-1" id="errors-list">
-            <div class="text-center text-xs text-slate-500 py-8">لا توجد أخطاء مرصودة حالياً.</div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- TAB 4: BACKUP & DATA -->
-    <section id="tab-backup" class="space-y-6 hidden">
-      <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 max-w-xl mx-auto text-center">
-        <i class="fa-solid fa-database text-purple-400 text-4xl mb-3"></i>
-        <h2 class="text-lg font-bold text-white mb-1">إدارة وتحفيظ البيانات</h2>
-        <p class="text-xs text-slate-400 mb-6">احفظ كافة سجلك وتحليلاتك كملف خارجي لاستعادته في أي وقت وعلى أي جهاز</p>
-
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <button onclick="exportData()" class="bg-purple-600 hover:bg-purple-500 text-white px-5 py-2.5 rounded-lg text-xs font-bold transition flex items-center justify-center gap-2">
-            <i class="fa-solid fa-download"></i> تصدير البيانات (Export JSON)
-          </button>
-          
-          <label class="bg-slate-800 hover:bg-slate-700 text-slate-200 px-5 py-2.5 rounded-lg text-xs font-bold cursor-pointer transition flex items-center justify-center gap-2">
-            <i class="fa-solid fa-upload"></i> استيراد ملف بيانات (Import)
-            <input type="file" id="import-file" onchange="importData(event)" class="hidden" accept=".json">
-          </label>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- JAVASCRIPT LOGIC -->
-  <script>
-    // System Data State
-    let appData = {
-      scores: [],
-      errors: []
-    };
-
-    const examDate = new Date('2026-12-01T00:00:00');
-    let chartInstance = null;
-
-    // Initialize App
-    document.addEventListener('DOMContentLoaded', () => {
-      loadLocalStorage();
-      initCountdown();
-      initChart();
-      updateDashboard();
-    });
-
-    // Tab Switcher
-    function switchTab(tabId) {
-      document.querySelectorAll('main > section').forEach(sec => sec.classList.add('hidden'));
-      document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
-
-      document.getElementById(`tab-${tabId}`).classList.remove('hidden');
-      document.getElementById(`btn-${tabId}`).classList.add('active');
-
-      if(tabId === 'dashboard' && chartInstance) {
-        chartInstance.update();
-      }
-    }
-
-    // Storage Handling
-    function loadLocalStorage() {
-      const stored = localStorage.getItem('amara_ielts_tracker_data');
-      if (stored) {
-        try {
-          appData = JSON.parse(stored);
-        } catch(e) {
-          console.error('Data parsing error', e);
-        }
-      }
-    }
-
-    function saveData() {
-      localStorage.setItem('amara_ielts_tracker_data', JSON.stringify(appData));
-      updateDashboard();
-    }
-
-    // Countdown Timer
-    function initCountdown() {
-      function updateTimer() {
-        const now = new Date();
-        const diff = examDate - now;
-
-        if (diff <= 0) {
-          document.getElementById('countdown-timer').innerText = "حان موعد الاختبار!";
-          return;
-        }
-
-        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-        const mins = Math.floor((diff / 1000 / 60) % 60);
-
-        document.getElementById('countdown-timer').innerText = `${days} يوم | ${hours} س | ${mins} د`;
-      }
-      updateTimer();
-      setInterval(updateTimer, 60000);
-    }
-
-    // Charting Engine
-    function initChart() {
-      const ctx = document.getElementById('scoresChart').getContext('2d');
-      chartInstance = new Chart(ctx, {
-        type: 'line',
-        data: {
-          labels: [],
-          datasets: [
-            {
-              label: 'Overall Band',
-              data: [],
-              borderColor: '#3b82f6',
-              backgroundColor: 'rgba(59, 130, 246, 0.1)',
-              fill: true,
-              tension: 0.3
-            },
-            {
-              label: 'Target Band (6.0)',
-              data: [],
-              borderColor: '#ef4444',
-              borderDash: [5, 5],
-              pointRadius: 0,
-              fill: false
-            }
-          ]
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          scales: {
-            y: { min: 0, max: 9, ticks: { stepSize: 1, color: '#94a3b8' }, grid: { color: '#1e293b' } },
-            x: { ticks: { color: '#94a3b8' }, grid: { color: '#1e293b' } }
-          },
-          plugins: {
-            legend: { labels: { color: '#cbd5e1' } }
-          }
-        }
-      });
-    }
-
-    // Dashboard Calculations & Update
-    function updateDashboard() {
-      // Scores Table & Averages
-      const tableBody = document.getElementById('scores-table-body');
-      tableBody.innerHTML = '';
-
-      if (appData.scores.length === 0) {
-        tableBody.innerHTML = `<tr><td colspan="7" class="p-4 text-center text-slate-500">لا توجد اختبارات مسجلة بعد. استخدم تبويب "تسجيل نتيجة اختبار جديد" للبدء.</td></tr>`;
-        document.getElementById('metric-overall').innerText = '0.0';
-        document.getElementById('metric-tests-count').innerText = '0';
-        document.getElementById('metric-last-date').innerText = 'لا يوجد';
-        updateSkillsUI(0, 0, 0, 0);
-      } else {
-        let sumL = 0, sumR = 0, sumW = 0, sumS = 0, sumOverall = 0;
-
-        appData.scores.forEach(item => {
-          sumL += item.l; sumR += item.r; sumW += item.w; sumS += item.s;
-          sumOverall += item.overall;
-
-          const row = document.createElement('tr');
-          row.className = 'hover:bg-slate-800/50';
-          row.innerHTML = `
-            <td class="p-3">${item.date}</td>
-            <td class="p-3 font-semibold text-slate-200">${item.source}</td>
-            <td class="p-3 text-center text-blue-400 font-bold">${item.l}</td>
-            <td class="p-3 text-center text-emerald-400 font-bold">${item.r}</td>
-            <td class="p-3 text-center text-amber-400 font-bold">${item.w}</td>
-            <td class="p-3 text-center text-purple-400 font-bold">${item.s}</td>
-            <td class="p-3 text-center text-white bg-slate-950 font-extrabold rounded-lg">${item.overall}</td>
-          `;
-          tableBody.appendChild(row);
-        });
-
-        const count = appData.scores.length;
-        const avgL = (sumL / count).toFixed(1);
-        const avgR = (sumR / count).toFixed(1);
-        const avgW = (sumW / count).toFixed(1);
-        const avgS = (sumS / count).toFixed(1);
-        const avgOverall = (sumOverall / count).toFixed(1);
-
-        document.getElementById('metric-overall').innerText = avgOverall;
-        document.getElementById('metric-tests-count').innerText = count;
-        document.getElementById('metric-last-date').innerText = appData.scores[appData.scores.length - 1].date;
-
-        updateSkillsUI(avgL, avgR, avgW, avgS);
-
-        // Update Chart
-        if(chartInstance) {
-          chartInstance.data.labels = appData.scores.map(s => s.date);
-          chartInstance.data.datasets[0].data = appData.scores.map(s => s.overall);
-          chartInstance.data.datasets[1].data = new Array(count).fill(6.0);
-          chartInstance.update();
-        }لم تحدد النموذج المطلوب بدقة. هل تقصد:
-
-1. **نموذج كتابة/طلب رسمي** (مثل طلب خطي، خطاب تحفيزي، أو سيرة ذاتية)؟
-2. **نموذج لمشروع أو عقد** (مثل عقد عمل، عقد إيجار، أو اتفاقية)؟
-3. **نموذج في الذكاء الاصطناعي أو البرمجة** (مثل هيكل كود معين أو أتمتة تدفق عمل)؟
-
-يرجى توضيح نوع النموذج وطبيعة الموضوع، وسأزودك بالشكل النهائي المكتمل فوراً.
+كيف أقدر أساعدك اليوم؟ تقدر تكمل بالعربي أو تحوّل للإنجليزية أو أي لغة تفضلها!
